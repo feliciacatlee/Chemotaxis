@@ -26,10 +26,15 @@ class Fish  {
   void walk()  {
     myX += (int)(Math.random()*7) - 5;
     myY += (int)(Math.random()*7) - 3;
-    if(myX > 400 || myX < 0)
-      myX = Math.floorMod(myX, 400);
-    if(myY > 400 || myY < 0)
-      myY = Math.floorMod(myY, 400);
+    //if(myX > 400 || myX < 0)
+    //  myX = Math.floorMod(myX, 400);
+    //if(myY > 400 || myY < 0)
+    //  myY = Math.floorMod(myY, 400);
+    //Math.floorMod() doesn't work on web?
+    if(myX > 400) myX -= 400;
+    if(myX < 0) myX += 400;
+    if(myY > 400) myY -= 400;
+    if(myY < 0) myY += 400;
   }
  
   void show()  {
